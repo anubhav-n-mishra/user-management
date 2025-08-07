@@ -1,0 +1,151 @@
+.auth-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.auth-form {
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+    border: 2px solid #333;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    padding: 30px;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffc107;
+    font-size: 28px;
+}
+
+.auth-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.auth-form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #ffc107;
+    background-color: #333;
+}
+
+.auth-form input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover:not(:disabled) {
+    background-color: #e0a800;
+}
+
+.auth-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.auth-link a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.test-credentials {
+    background-color: #2a2a2a;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.test-credentials h4 {
+    color: #ffc107;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.test-credentials p {
+    color: #e0e0e0;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.test-credentials strong {
+    color: #ffc107;
+}
