@@ -1,5 +1,5 @@
 // API Base URL
-const API_BASE_URL = 'http://localhost/user-management-api';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 // Get current user from localStorage
 const getCurrentUser = () => {
@@ -21,7 +21,7 @@ const getAuthHeaders = () => {
 class ApiService {
     // Authentication endpoints
     static async signup(userData) {
-        const response = await fetch(`${API_BASE_URL}/auth_new.php?action=signup`, {
+    const response = await fetch(`${API_BASE_URL}/auth/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ class ApiService {
     }
 
     static async signin(credentials) {
-        const response = await fetch(`${API_BASE_URL}/auth_new.php?action=signin`, {
+    const response = await fetch(`${API_BASE_URL}/auth/signin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ class ApiService {
 
     // User management endpoints
     static async getAllUsers() {
-        const response = await fetch(`${API_BASE_URL}/users_new.php`, {
+    const response = await fetch(`${API_BASE_URL}/users`, {
             headers: getAuthHeaders()
         });
 
@@ -69,7 +69,7 @@ class ApiService {
     }
 
     static async getUser(id) {
-        const response = await fetch(`${API_BASE_URL}/users_new.php?id=${id}`, {
+    const response = await fetch(`${API_BASE_URL}/users/${id}`, {
             headers: getAuthHeaders()
         });
 
@@ -82,7 +82,7 @@ class ApiService {
     }
 
     static async createUser(userData) {
-        const response = await fetch(`${API_BASE_URL}/users_new.php`, {
+    const response = await fetch(`${API_BASE_URL}/users`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify(userData)
@@ -97,7 +97,7 @@ class ApiService {
     }
 
     static async updateUser(id, userData) {
-        const response = await fetch(`${API_BASE_URL}/users_new.php?id=${id}`, {
+    const response = await fetch(`${API_BASE_URL}/users/${id}`, {
             method: 'PUT',
             headers: getAuthHeaders(),
             body: JSON.stringify(userData)
@@ -112,7 +112,7 @@ class ApiService {
     }
 
     static async deleteUser(id) {
-        const response = await fetch(`${API_BASE_URL}/users_new.php?id=${id}`, {
+    const response = await fetch(`${API_BASE_URL}/users/${id}`, {
             method: 'DELETE',
             headers: getAuthHeaders()
         });

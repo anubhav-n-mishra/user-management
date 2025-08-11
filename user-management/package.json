@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5173",
+  "dev": "vite --port 5173",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+  "preview": "vite preview",
+  "api:dev": "cd server && npm run dev",
+  "api:migrate": "cd server && npm run migrate"
   },
   "dependencies": {
     "react": "^19.1.0",
