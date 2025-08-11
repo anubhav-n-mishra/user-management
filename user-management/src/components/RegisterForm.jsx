@@ -18,7 +18,6 @@ function SignUp(){
         e.preventDefault();
         setError('');
 
-        // Validation
         if (password !== cPassword) {
             setError('Passwords do not match');
             return;

@@ -34,13 +34,10 @@ function UserManagement() {
             setLoading(true);
             const allUsers = await ApiService.getAllUsers();
             
-            // For admin users, filter out themselves from the list
-            // For regular users, they'll only see their own data from the API
             if (user.role === 'admin') {
                 const otherUsers = allUsers.filter(u => u.id !== user.id);
                 setUsers(otherUsers);
             } else {
-                // Regular users see empty list since UserManagement is admin-only
                 setUsers([]);
             }
         } catch (error) {

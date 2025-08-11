@@ -153,11 +153,7 @@ user-management/
 
 ## Contributing
 
-1. Fork the repository
-2. Create feature branch
-3. Make changes
-4. Test thoroughly
-5. Submit pull request
+Fork the repository, create feature branch, make changes, test thoroughly, submit pull request.
 
 ## License
 

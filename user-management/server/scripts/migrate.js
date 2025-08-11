@@ -16,7 +16,6 @@ async function migrate() {
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`);
 
-  // Seed admin
   const [rows] = await connection.execute('SELECT id FROM users WHERE email = ?',[ 'admin@example.com']);
   if(rows.length === 0){
     const bcrypt = await import('bcrypt');

@@ -3,7 +3,6 @@ import { connection } from './db.js';
 
 const router = Router();
 
-// Auth middleware using headers
 router.use((req,res,next)=>{
   const userId = req.header('X-User-Id');
   const role = req.header('X-User-Role');

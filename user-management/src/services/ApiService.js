@@ -1,13 +1,10 @@
-// API Base URL
 const API_BASE_URL = 'http://localhost:3001/api';
 
-// Get current user from localStorage
 const getCurrentUser = () => {
     const userStr = localStorage.getItem('user');
     return userStr ? JSON.parse(userStr) : null;
 };
 
-// Get headers with authentication
 const getAuthHeaders = () => {
     const user = getCurrentUser();
     return {
@@ -17,11 +14,9 @@ const getAuthHeaders = () => {
     };
 };
 
-// API Service Class
 class ApiService {
-    // Authentication endpoints
     static async signup(userData) {
-    const response = await fetch(`${API_BASE_URL}/auth/signup`, {
+        const response = await fetch(`${API_BASE_URL}/auth/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,9 +49,8 @@ class ApiService {
         return response.json();
     }
 
-    // User management endpoints
     static async getAllUsers() {
-    const response = await fetch(`${API_BASE_URL}/users`, {
+        const response = await fetch(`${API_BASE_URL}/users`, {
             headers: getAuthHeaders()
         });
 
@@ -69,7 +63,7 @@ class ApiService {
     }
 
     static async getUser(id) {
-    const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/users/${id}`, {
             headers: getAuthHeaders()
         });
 
