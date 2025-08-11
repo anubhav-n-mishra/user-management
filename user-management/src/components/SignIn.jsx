@@ -35,30 +35,7 @@ function SignIn() {
             <form onSubmit={handleSubmit} className="auth-form">
                 <h2>Sign In</h2>
                 
-                <div className="test-credentials">
-                    <h4>🧪 Test Credentials (India)</h4>
-                    <p><strong>Email:</strong> test@example.com</p>
-                    <p><strong>Password:</strong> test123</p>
-                    <button 
-                        type="button" 
-                        onClick={() => {
-                            localStorage.clear();
-                            window.location.reload();
-                        }}
-                        style={{
-                            fontSize: '12px',
-                            padding: '5px 10px',
-                            marginTop: '10px',
-                            backgroundColor: '#666',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        🗑️ Clear Storage & Reload
-                    </button>
-                </div>
+               
                 
                 {successMessage && (
                     <div className="success">{successMessage}</div>

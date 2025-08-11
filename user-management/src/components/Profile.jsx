@@ -82,6 +82,7 @@ function Profile() {
                 <h1>Profile</h1>
                 <nav>
                     <Link to="/dashboard" className="nav-link">← Back to Dashboard</Link>
+                    <Link to="/users" className="nav-link">User Management</Link>
                     <button onClick={handleSignOut} className="signout-btn">
                         Sign Out
                     </button>

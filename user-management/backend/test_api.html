@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>User Management API Test</h1>
+    
+    <h2>Test Signup</h2>
+    <button onclick="testSignup()">Test Signup</button>
+    <div id="signupResult"></div>
+    
+    <h2>Test Signin</h2>
+    <button onclick="testSignin()">Test Signin</button>
+    <div id="signinResult"></div>
+    
+    <script>
+        async function testSignup() {
+            try {
+                const response = await fetch('http://localhost/user-management-api/auth_new.php?action=signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        email: 'test@test.com',
+                        password: 'test123',
+                        profile: {
+                            bio: 'Test bio',
+                            phone: '1234567890',
+                            address: 'Test address'
+                        }
+                    })
+                });
+                
+                const result = await response.json();
+                document.getElementById('signupResult').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('signupResult').innerHTML = 'Error: ' + error.message;
+            }
+        }
+        
+        async function testSignin() {
+            try {
+                const response = await fetch('http://localhost/user-management-api/auth_new.php?action=signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'admin@example.com',
+                        password: 'admin123'
+                    })
+                });
+                
+                const result = await response.json();
+                document.getElementById('signinResult').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('signinResult').innerHTML = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

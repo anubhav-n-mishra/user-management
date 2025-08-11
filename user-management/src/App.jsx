@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
 import SignUp from './components/RegisterForm';
 import SignIn from './components/SignIn';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
+import UserManagement from './components/UserManagement';
 import './App.css'
 
 function App() {
@@ -30,6 +32,14 @@ function App() {
                 <ProtectedRoute>
                   <Profile />
                 </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/users" 
+              element={
+                <AdminRoute>
+                  <UserManagement />
+                </AdminRoute>
               } 
             />
             
